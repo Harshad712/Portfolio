@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    --tw-text-opacity: 1;
+}
+body{
+    background-color: #0A0A0A;
+}
+
+/* Hide scrollbar but keep scrolling */
+.hide-scrollbar {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+  
+
+
+#page1 {
+    /* height: 100vh;
+    background-color: #111; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#moving-div {
+    display: flex;
+    margin-top: 10vh;
+    position: absolute;
+    bottom: 3%;
+    white-space: nowrap;
+    padding: 1.2vw;
+    overflow: hidden;
+    /* width: 80%; */
+}
+
+#moving-div .move {
+    display: flex;
+    animation: move 6s linear infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+#blur-left {
+    height: 100%;
+    width: 20%;
+    background: linear-gradient(to right, #0A0A0A, transparent);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+#blur-right {
+    height: 100%;
+    width: 20%;
+    background: linear-gradient(to right, transparent, #0A0A0A);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+
+
+
+@layer components{
+    .heroButton{
+        @apply px-6 py-2 border border-[#242424] uppercase text-xs tracking-widest
+        text-gray-500 transition-all hover:border-[#F7AB0A]/40
+        hover:text-[#F7AB0A]/40        
+    } 
+
+    .hoverNav {
+        color: #D7CBC4;
+        text-decoration: none;
+        font-size: 25px;
+        border: none;
+        background: none;             
+        
+      }
+      
+      .hoverNav::before {
+        margin-left: auto;
+      }
+      
+      .hoverNav::after, .hoverNav::before {
+        content: '';
+        width: 0%;
+        height: 4px;
+        background: #E2711E;
+        display: block;
+        transition: 0.5s;
+        border-radius: 4px;
+      }
+      
+      .hoverNav:hover::after, .hoverNav:hover::before {
+        width: 100%;
+      }
+
+    .hoverButton{
+        font-size: 1rem;
+        background: transparent;        
+        padding: 1em 1.5em;
+        color: rgb(156 163 175 / var(--tw-text-opacity));
+        text-transform: uppercase;
+        position: relative;
+        transition: .5s ease;
+        
+    }
+    .hoverButton::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 0;
+        background-color: #E2711E;
+        transition: .3s ease;
+      }
+      
+    .hoverButton:hover {
+        color: #D7CBC4;
+        
+        transition-delay: .5s;
+    }
+    
+    .hoverButton:hover::before {
+        width: 100%;
+    }
+    
+    .hoverButton::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 0;
+        width: 100%;
+        background-color: #E2711E;
+        transition: .4s ease;
+        z-index: -1;
+    }
+    
+    .hoverButton:hover::after {
+        height: 100%;
+        transition-delay: 0.4s;
+        color: aliceblue;
+    }
+
+    .contactInput{
+        @apply outline-none bg-slate-400/10 rounded-sm border-b px-6 py-6 border-[#242424]
+        text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40
+        focus:text-[#F7AB0A]/40  hover:border-[#F7AB0A]/40
+    }
+}
