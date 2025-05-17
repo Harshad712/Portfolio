@@ -102,7 +102,7 @@ const About = (props: Props) => {
                                 <button className="hoverButton z-0 tracking-[2px] md:text-xl font-bold">GitHub</button>                
                             </Link>
 
-                            <Link href="https://drive.google.com/file/d/1w4YTcMhJdAM7MpKg5nDVQoIoH6KB0RKt/view?usp=drive_link" >
+                            <Link href="https://drive.google.com/file/d/19uSUU57K4HgLKwvWIbI96r5bXSksisc7/view?usp=drive_link" >
                                 <button className="hoverButton z-0 tracking-[2px] md:text-xl font-bold">My CV</button>
                             </Link>    
                                 
