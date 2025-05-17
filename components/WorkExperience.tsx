@@ -26,18 +26,24 @@ function WorkExperience({}: Props) {
         <div className='w-full flex space-x-5 overflow-x-scroll pl-20 pr-10 pb-10 snap-x absolute top-48
         snap-mandatory scrollbar-thin scrollbar-thumb-rounded-md
         scrollbar-track-gray-400/20 scrollbar-thumb-[#E2711E]/80'>
-   
+            
+            <ExperienceCard 
+              imageSrc="reelo.jpeg" 
+              position="AI Engineer Intern" 
+              companyName="Reelo Technologies" 
+              dates="May 2025 - Present" 
+              description={[
+                  "Working on AI-powered customer engagement and personalization features.",
+                  "Building and integrating machine learning models into the product pipeline.",
+                  "Exploring NLP and generative AI tools to improve review insights and automation.",
+              ]}
+            />
+
             <ExperienceCard 
               imageSrc="SRC.jpg"
               position="Backend Developer" 
               companyName="SRC CLUB" 
-              techUsed={[
-                { src: '/mongodb.png', alt: 'MongoDb' }, 
-                { src: '/firebase.png', alt: 'Firebase' },
-                { src: '/react.png', alt: 'React' },
-                { src: '/nextjs.png', alt: 'Next.js' },
-                { src: '/fastapi.png', alt: 'FastAPI' 
-              }]}
+              
               dates='Sept 2024 - Present'
               description={[
                   "Built a community platform for literature enthusiasts.",
@@ -50,12 +56,7 @@ function WorkExperience({}: Props) {
               imageSrc="preswald.png"
               position="Open Source Contributor" 
               companyName="Preswald" 
-              techUsed={[
-                { src: '/mongodb.png', alt: 'MongoDb' }, 
-                { src: '/react.png', alt: 'React' }, 
-                { src: '/python.png', alt: 'Python' }, 
-                { src: '/fastapi.png', alt: 'FastAPI' }
-              ]}
+             
               dates='APR 2025 - Present'
               description={[
                   "Built customizable sidebar branding (dynamic logo & title) with fallbacks.",
